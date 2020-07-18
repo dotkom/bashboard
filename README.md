@@ -1,2 +1,3 @@
-# dank-dashboard
-Anhkha får ståtiss av Sanity
+# Strapi application
+
+A quick description of your strapi application
