@@ -1,37 +1,33 @@
 {
-  "name": "dank-dashboard",
+  "name": "dankdashboard",
   "private": true,
-  "version": "0.1.0",
-  "description": "A Strapi application",
+  "version": "1.0.0",
+  "description": "A quick description of your strapi application",
+  "main": "package.json",
+  "author": "Dotkom <dotkom@online.ntnu.no>",
+  "license": "UNLICENSED",
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "start": "sanity start",
+    "test": "sanity check"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/base": "^1.149.18",
+    "@sanity/components": "^1.149.18",
+    "@sanity/core": "^1.149.18",
+    "@sanity/default-layout": "^1.149.18",
+    "@sanity/default-login": "^1.149.18",
+    "@sanity/desk-tool": "^1.149.18",
+    "@sanity/vision": "^1.149.16",
+    "prop-types": "^15.6",
+    "react": "^16.2",
+    "react-dom": "^16.2"
   },
   "devDependencies": {},
-  "dependencies": {
-    "strapi": "3.0.6",
-    "strapi-admin": "3.0.6",
-    "strapi-utils": "3.0.6",
-    "strapi-plugin-content-type-builder": "3.0.6",
-    "strapi-plugin-content-manager": "3.0.6",
-    "strapi-plugin-users-permissions": "3.0.6",
-    "strapi-plugin-email": "3.0.6",
-    "strapi-plugin-upload": "3.0.6",
-    "strapi-connector-bookshelf": "3.0.6",
-    "knex": "<0.20.0",
-    "sqlite3": "latest"
-  },
-  "author": {
-    "name": "A Strapi developer"
-  },
-  "strapi": {
-    "uuid": "ade9aab8-2bae-4ecd-9135-1b9f2ce43767"
-  },
-  "engines": {
-    "node": ">=10.0.0",
-    "npm": ">=6.0.0"
-  },
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dotkom/dank-dashboard"
+  }
 }
