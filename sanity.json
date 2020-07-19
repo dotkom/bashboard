@@ -27,6 +27,10 @@
     {
       "implements": "part:@sanity/base/brand-logo",
       "path": "./components/Logo.js"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./styles/variables.css"
     }
   ]
 }
