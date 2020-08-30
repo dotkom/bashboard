@@ -4,9 +4,9 @@ export default {
   title: "Interessegruppe",
   fields: [
     {
-      name: "name",
+      name: "title",
       type: "string",
-      title: "Navn",
+      title: "Tittel",
     },
     {
       name: "description",
@@ -20,7 +20,7 @@ export default {
     },
     {
       name: "read_more_link",
-      type: "link",
+      type: "url",
       title: "Les mer lenke",
     },
     {
@@ -28,8 +28,14 @@ export default {
       type: "boolean",
       title: "Aktiv",
     },
+    {
+      name: "priority",
+      type: "number",
+      title: "Prioritet på rekkefølge",
+    },
   ],
   default: () => ({
     active: false,
+    priority: 0,
   }),
 };
