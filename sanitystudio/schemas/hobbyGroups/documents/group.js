@@ -1,4 +1,6 @@
-export default {
+import { createDimensionRule } from "../../../utils/imgDimensionRules";
+
+const HobbyGroup = {
   name: "hobbyGroup",
   type: "document",
   title: "Interessegruppe",
@@ -16,7 +18,20 @@ export default {
     {
       name: "image",
       type: "image",
-      title: "Bilde",
+      title: "Logo",
+      validation: (Rule) => [
+        createDimensionRule(
+          Rule,
+          (dim) => dim.width > 250 || "Width must be greater than 250px"
+        ),
+        createDimensionRule(
+          Rule,
+          (dim) => dim.height > 250 || "Height must be greater than 250px"
+        ),
+      ],
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: "read_more_link",
@@ -34,8 +49,10 @@ export default {
       title: "Prioritet på rekkefølge",
     },
   ],
-  default: () => ({
+  initialValue: () => ({
     active: false,
     priority: 0,
   }),
 };
+
+export default HobbyGroup;
