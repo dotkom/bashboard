@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import NextLink from "next/link";
-import { Flex, Grid, Icon, Link, Text } from "@dotkomonline/yacl";
+import { Box, Icon, Link } from "@dotkomonline/yacl";
 import { useRouter } from "next/dist/client/router";
 import { IconType } from "react-icons";
 
@@ -15,21 +15,21 @@ export const SidebarLink: FC<SidebarLinkProps> = ({ href, icon, children }) => {
 
   return (
     <NextLink href={href}>
-      <Link
+      <Box
         color={isActive ? "white" : "#5d6389"}
         borderLeft="4px"
         borderColor={isActive ? "orange.500" : "transparent"}
-        bg={isActive && "#111a51"}
+        bg={isActive && "#121a46"}
+        _hover={!isActive && { bg: "#151d4e" }}
         fontSize="lg"
         paddingY="3"
         paddingX="4"
-        _hover={{ textDecoration: "none" }}
       >
-        <Flex alignItems="center" justifyContent="flex-start">
+        <Link gridArea="text" _hover={{ textDecoration: "none" }}>
           {icon && <Icon as={icon} gridArea="icon" marginRight="2rem" />}
-          <Text gridArea="text">{children}</Text>
-        </Flex>
-      </Link>
+          {children}
+        </Link>
+      </Box>
     </NextLink>
   );
 };

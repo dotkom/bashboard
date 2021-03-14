@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "packages": {
+    "@dotkomonline/yacl": {
+      "signature": "35a49c00a3db851d7c7d87f0a550fe53",
+      "file": true,
+      "replaced": "file:../../yacl"
+    }
+  }
+}
