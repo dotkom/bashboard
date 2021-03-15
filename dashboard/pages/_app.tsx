@@ -5,6 +5,7 @@ import { ApolloProvider } from "@apollo/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Hydrate } from "react-query/hydration";
 import { ThemeProvider, OnlineTheme, extendTheme } from "@dotkomonline/yacl";
+import { Provider } from "next-auth/client";
 
 const theme = extendTheme(
   {
@@ -24,15 +25,20 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const apolloClient = initializeApollo();
   const queryClient = new QueryClient();
   return (
-    <ThemeProvider theme={theme}>
-      <ApolloProvider client={apolloClient}>
-        <QueryClientProvider client={queryClient}>
-          <Hydrate state={pageProps.dehydratedState}>
-            <Component {...pageProps} />
-          </Hydrate>
-        </QueryClientProvider>
-      </ApolloProvider>
-    </ThemeProvider>
+    <Provider
+      options={{ clientMaxAge: 0, keepAlive: 0 }}
+      session={pageProps.session}
+    >
+      <ThemeProvider theme={theme}>
+        <ApolloProvider client={apolloClient}>
+          <QueryClientProvider client={queryClient}>
+            <Hydrate state={pageProps.dehydratedState}>
+              <Component {...pageProps} />
+            </Hydrate>
+          </QueryClientProvider>
+        </ApolloProvider>
+      </ThemeProvider>
+    </Provider>
   );
 }
 
