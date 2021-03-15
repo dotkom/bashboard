@@ -1,7 +1,13 @@
 import { Stack, Logo, Center, ModernLogo } from "@dotkomonline/yacl";
 import React from "react";
 import { IconType } from "react-icons";
-import { FaBuilding, FaNewspaper, FaWheelchair } from "react-icons/fa";
+import {
+  FaBuilding,
+  FaNewspaper,
+  FaSuitcase,
+  FaTwitch,
+  FaWheelchair,
+} from "react-icons/fa";
 import { SidebarLink } from "../molecules/sidebar_entry";
 
 interface SidebarEntry {
@@ -27,6 +33,16 @@ const Links: LinkType[] = [
     label: "Bedrifter",
     icon: FaBuilding,
     href: "/",
+  },
+  {
+    label: "Karrieremuligheter",
+    icon: FaSuitcase,
+    href: "/career",
+  },
+  {
+    label: "Is for me?",
+    icon: FaTwitch,
+    href: "/twitch",
   },
 ];
 
