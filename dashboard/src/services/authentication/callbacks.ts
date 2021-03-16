@@ -38,7 +38,7 @@ export const authCallback: Callbacks = {
     }
     return Promise.resolve({ ...token, ...profile });
   },
-  isNewUser: (isNew) => {
-    console.log(isNew);
+  signIn: async (_, __, profile) => {
+    return profile.staff;
   },
 };
