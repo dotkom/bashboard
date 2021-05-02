@@ -26,7 +26,7 @@ fetch(`https://${projectId}.api.sanity.io/v1/data/mutate/${dataset}`, {
   method: "post",
   headers: {
     "Content-type": "application/json",
-    Authorization: `Bearer sk14SGim7ZKktU5O2ogsVJNE3zY8LZLSeE0b1dM6iVhHFCOxYm2U40q93SeblWSKGoEkqkcPvA3lgwIId8zAg3Qyq0TtVdEM8dysWcgz5KakmVJpXJMYpM5OZqbYpJon1nmgKcfPd5yZPPmZtqOZBLyVU9icG6z1jOTs1MBGBmSzHfrXRnyJ`,
+    Authorization: `Bearer ${process.env.SANITY_TOKEN}`,
   },
   body: JSON.stringify({ mutations }),
 })
