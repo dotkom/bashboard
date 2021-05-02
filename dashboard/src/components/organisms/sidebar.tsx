@@ -1,4 +1,4 @@
-import { Stack, Logo, Center, ModernLogo } from "@dotkomonline/yacl";
+import { Stack, Center, ModernLogo } from "@dotkomonline/yacl";
 import React from "react";
 import { IconType } from "react-icons";
 import {

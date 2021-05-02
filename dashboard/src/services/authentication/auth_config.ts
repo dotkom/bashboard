@@ -1,4 +1,5 @@
 import { InitOptions } from "next-auth";
+import { signIn } from "next-auth/client";
 import { authCallback } from "./callbacks";
 import { OnlineProvider } from "./provider";
 
@@ -68,7 +69,11 @@ const AuthOptions: InitOptions = {
   callbacks: authCallback,
   // Events are useful for logging
   // https://next-auth.js.org/configuration/events
-  events: {},
+  events: {
+    signIn: async (message) => {
+      console.log(message);
+    },
+  },
 
   // Enable debug messages in the console if you are having problems
   debug: false,
